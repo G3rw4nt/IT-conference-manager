@@ -5,26 +5,24 @@ import org.springframework.web.bind.annotation.*;
 import pl.gerwant.itconferencemanager.dao.entities.User;
 import pl.gerwant.itconferencemanager.manager.Manager;
 
-import java.util.Optional;
-
 @RestController
 @RequestMapping("/api")
 public class Api {
-    private Manager users;
+    private Manager manager;
 
     @Autowired
-    public Api(Manager users) {
-        this.users = users;
+    public Api(Manager manager) {
+        this.manager = manager;
     } // constructor
 
     @GetMapping("/users/all")
-    public Iterable<User> getAll(){
-        return users.findAll();
+    public Iterable<User> getAllUsers(){
+        return manager.getAllUsers();
     } // return all registered users
 
     @PatchMapping
     public User updateEmail(@RequestBody User user) { //update email of a user
-        return users.updateEmail(user);
+        return manager.updateEmail(user);
     }
 
 }

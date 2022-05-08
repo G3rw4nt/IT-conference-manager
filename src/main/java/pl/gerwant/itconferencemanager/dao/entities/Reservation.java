@@ -1,20 +1,32 @@
 package pl.gerwant.itconferencemanager.dao.entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class User {
-
+public class Reservation {
     @Id
+    private String id;
     private String login;
     private String email;
 
-    public User() {
+    public Reservation() {
     }
 
-    public User(String login, String email) {
+    public Reservation(String id, String login, String email) {
+        this.id = id;
         this.login = login;
         this.email = email;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getLogin() {
