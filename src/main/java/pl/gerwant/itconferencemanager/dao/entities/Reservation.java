@@ -1,32 +1,42 @@
 package pl.gerwant.itconferencemanager.dao.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Reservation {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private String id;
+    private int id;
+    private String lectureid;
     private String login;
     private String email;
+    private int lecturetopic;
 
     public Reservation() {
     }
 
-    public Reservation(String id, String login, String email) {
+    public Reservation(int id, String lectureid, String login, String email, int lecturetopic) {
         this.id = id;
+        this.lectureid = lectureid;
         this.login = login;
         this.email = email;
+        this.lecturetopic = lecturetopic;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public String getLectureid() {
+        return lectureid;
+    }
+
+    public void setLectureid(String lectureid) {
+        this.lectureid = lectureid;
     }
 
     public String getLogin() {
@@ -43,5 +53,13 @@ public class Reservation {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getLecturetopic() {
+        return lecturetopic;
+    }
+
+    public void setLecturetopic(int lecturetopic) {
+        this.lecturetopic = lecturetopic;
     }
 }
