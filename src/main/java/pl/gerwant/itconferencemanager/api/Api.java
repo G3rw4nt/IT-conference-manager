@@ -11,6 +11,7 @@ import pl.gerwant.itconferencemanager.manager.Manager;
 import javax.transaction.Transactional;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -47,4 +48,10 @@ public class Api {
     @Transactional
     @DeleteMapping
     public void deleteReservation(@RequestParam String id, String login){manager.deleteReservation(id, login);}
+
+    @GetMapping("/results/lecture")
+    public Map<String,Double> getLectureIdResults(){return manager.resultsByLecture();}
+
+    @GetMapping("/results/lecturetopic")
+    public Map<Integer,Double> getLectureTobicResults(){return manager.resultsByTopic();}
 }
