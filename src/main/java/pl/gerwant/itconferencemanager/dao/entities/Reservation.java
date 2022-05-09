@@ -11,16 +11,15 @@ public class Reservation {
     private String login;
     private String email;
     private int lecturetopic;
+    private int starthour;
 
     public Reservation() {
     }
 
-    public Reservation(int id, String lectureid, String login, String email, int lecturetopic) {
-        this.id = id;
+    public Reservation(String lectureid, String login, String email) {
         this.lectureid = lectureid;
         this.login = login;
         this.email = email;
-        this.lecturetopic = lecturetopic;
     }
 
     public int getId() {
@@ -61,5 +60,13 @@ public class Reservation {
 
     public void setLecturetopic(int lecturetopic) {
         this.lecturetopic = lecturetopic;
+    }
+
+    public int getStarthour() {
+        return starthour;
+    }
+
+    public void setStarthour(int starthour) {
+        this.starthour = starthour;
     }
 }

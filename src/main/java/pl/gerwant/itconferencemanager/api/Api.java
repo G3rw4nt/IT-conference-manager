@@ -32,9 +32,7 @@ public class Api {
     @GetMapping("/reservations/all")
     public Iterable<Reservation> getAllReservations(){return manager.getAllReservations();}
     @GetMapping("/users/all")
-    public Iterable<User> getAllUsers(){
-        return manager.getAllUsers();
-    } // return all registered users
+    public Iterable<User> getAllUsers(){ return manager.getAllUsers(); } // return all registered users
     @GetMapping("/reservations")
     public Iterable<Reservation> getUsersReservations(@RequestParam String login){return manager.getUsersReservations(login);}
 
@@ -44,7 +42,7 @@ public class Api {
     }
 
     @PostMapping
-    public Reservation addReservation(@RequestBody Reservation reservation) throws IOException { return manager.addReservation(reservation); }
+    public String addReservation(@RequestBody Reservation reservation) throws IOException { return manager.addReservation(reservation); }
 
     @Transactional
     @DeleteMapping
