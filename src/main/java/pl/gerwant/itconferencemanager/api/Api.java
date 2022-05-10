@@ -53,5 +53,5 @@ public class Api {
     public Map<String,Double> getLectureIdResults(){return manager.resultsByLecture();}
 
     @GetMapping("/results/lecturetopic")
-    public Map<Integer,Double> getLectureTobicResults(){return manager.resultsByTopic();}
+    public Map<Integer,Double> getLectureTopicResults(){return manager.resultsByTopic();}
 }

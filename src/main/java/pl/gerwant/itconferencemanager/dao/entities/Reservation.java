@@ -11,7 +11,7 @@ public class Reservation {
     private String login;
     private String email;
     private int lecturetopic;
-    private int starthour;
+    private Integer starthour;
 
     public Reservation() {
     }
