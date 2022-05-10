@@ -1,6 +1,7 @@
 package pl.gerwant.itconferencemanager.dao.entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class User {
