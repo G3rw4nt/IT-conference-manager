@@ -1,0 +1,1 @@
+java -jar ./target/IT-conference-manager-0.0.1-SNAPSHOT.jar
